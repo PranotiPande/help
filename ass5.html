@@ -1,0 +1,24 @@
+<html>
+<head>
+<script>
+array= new Array("Pranoti","kalyani","Basra","Karishma","Arushi");
+var arr=[];
+function reverse(){
+	for(var i=0;i<array.length;i++)
+	{
+	arr=array.reverse();
+	}
+	document.write("reverse::"+arr+"<br>");
+	show();
+}
+function show()
+{
+	document.write("reverse and sorted array is::"+arr.sort());
+}
+
+</script>
+</head>
+<body>
+<input type="button" id="show" onclick="reverse()" value="show data">
+</body>
+</html>

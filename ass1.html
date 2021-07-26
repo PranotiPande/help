@@ -1,0 +1,118 @@
+<html>
+<head>
+<script>
+function f1()
+{
+	var d=new Date();
+	var d1 =d.getDay();
+	var date =d.getDate();
+	var m=d.getMonth();
+	var year=d.getFullYear();
+	var hours=d.getHours();
+	var msg;
+	var day;
+	var month;
+	if(d1==1)
+	{
+	day="Monday";
+	}
+	if(d1==2)
+	{
+	day="Tuesday";
+	}
+	if(d1==3)
+	{
+	day="Wednesday";
+	}
+	if(d1==4)
+	{
+	day="Thirday";
+	}
+	if(d1==5)
+	{
+	day="Friday";
+	}
+	if(d1==6)
+	{
+	day="Saturday";
+	}
+	if(d1==7)
+	{
+	day="Sunday";
+	}
+	if(m==0)
+	{
+	month="January";
+	}
+	if(m==1)
+	{
+	month="February";
+	}
+	if(m==2)
+	{
+	month="March";
+	}
+	if(m==3)
+	{
+	month="April";
+	}
+	if(m==4)
+	{
+	month="May";
+	}
+	if(m==5)
+	{
+	month="June";
+	}
+	if(m==6)
+	{
+	month="Jully";
+	}
+	if(m==7)
+	{
+	month="August";
+	}
+	if(m==8)
+	{
+	month="September";
+	}
+	if(m==9)
+	{
+	month="October";
+	}
+	if(m==10)
+	{
+	month="November";
+	}
+	if(m==11)
+	{
+	month="December";
+	}
+	if(hours<12)
+	{
+	msg="Morning";
+	}
+	if(hours>12 && hours<18)
+	{
+	msg="Afternoon";
+	}
+	if(hours>18)
+	{
+	msg="Evening";
+	}
+	
+	document.getElementById("mydiv").innerHTML='Today is'+' '+day+','+date+' '+month+' '+year+' '+',Welcome Good'+' '+msg+' '+'to You';
+}
+var s=setInterval(f1,1000);
+</script>
+<style>
+	div{
+	color:red;
+	font-weight:bold;
+	}
+</style>
+</head>
+<body>
+<div id="mydiv"></div>
+</body>
+</html>

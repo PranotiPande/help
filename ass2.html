@@ -1,0 +1,60 @@
+<html>
+<head>
+<script>
+var employee =[];
+function save()
+	{
+var nameInput=document.getElementById("name").value;
+var mnoInput=document.getElementById("mno").value;
+var eduInput=document.getElementById("edu").value;
+	
+		employee.push(nameInput);
+		employee.push(mnoInput);
+		employee.push(eduInput);
+		console.log(employee);
+	}
+	function show()
+	{
+		var emp=document.getElementById("mydiv");
+		emp.innerHTML="Unsorted Employee detail::" +employee+ "<br>";
+		//var array=employee.sort();
+		//var emp=document.getElementById("mydiv2");
+		//emp.innerHTML="Sorted Employee detail::" +array+ "<br>";
+	}
+</script>
+</head>
+<body>
+<h1>ENTER EMPLOYEE DETAIL</h1>
+
+<table>
+	<tr>
+	<td>
+		<label>NAME:</label>
+	</td>
+	<td>
+		<input type="text" id="name">
+	</td>
+	</tr>
+	<tr>
+	<td>
+		<label>MOBILE NO:</label>
+	</td>
+	<td>
+		<input type="text" id="mno">
+	</td>
+	</tr>
+	<tr>
+	<td>
+		<label>EDUCATION:</label>
+	<td>
+		<input type="text"id="edu">
+	</td>
+	</tr>
+</table>
+	<input type="submit" value="save" onclick="save()">
+	<input type="button" value="show" onclick="show()">
+
+<div id="mydiv"></div>
+<div id="mydiv2"></div>
+</body>
+</html>

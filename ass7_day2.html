@@ -1,0 +1,71 @@
+<html>
+<head>
+<script>
+	function search()
+	{
+		var str=document.getElementById("string").value;
+		var substring=document.getElementById("substring").value;
+		if(str.indexOf(substring) > -1)
+		{
+		alert("String found!!!");
+		}
+		else
+		{
+			alert("String not found!!!");
+		}
+
+	}
+	function upper()
+	{
+		var str=document.getElementById("string").value;
+		alert("convert to Uppaercase::"+str.toUpperCase());
+	}
+	function lower()
+	{
+		var str=document.getElementById("string").value;
+		alert("convert to Uppaercase::"+str.toLowerCase());
+	}
+	function trim()
+	{
+		var str=document.getElementById("string").value;
+		alert("trim::"+str.trim());
+	}
+	function concat()
+	{
+	var str=document.getElementById("string").value;
+	var substring=document.getElementById("substring").value;
+	alert("Afetr cncatenate::"+str.concat(substring));
+	}
+	function replace()
+	{
+		var str=document.getElementById("string").value;
+		var rstring=document.getElementById("Rstring").value;
+		alert(str+" Replace with::"+str.replace(str,rstring));
+	}
+	
+	
+</script>
+<style>
+div{
+border:height:100px;
+width:900px;
+border: solid 1px black;	
+}
+</style>
+</head>
+<body>
+
+<div>
+<br>
+Enter String:<input type="text" id="string" ><br><br>
+Enter Sub String:<input type="text" id="substring" ><br><br>
+Replace with String:<input type="text" id="Rstring"><br><br>
+	<input type="radio" id="search" onclick="search()">Search SubString in main String &nbsp;&nbsp;
+	<input type="radio" id="upper" onclick="upper()">To Upper Case &nbsp;&nbsp;
+	<input type="radio" id="lower" onclick="lower()">To Lower Case &nbsp;&nbsp;
+	<input type="radio" id="search" onclick="trim()">Trim Spaces  &nbsp;&nbsp;
+	<input type="radio" id="search" onclick="concat()" >Concatenate  &nbsp;&nbsp;
+	<input type="radio" id="search" onclick="replace()" >Replace  &nbsp;&nbsp;
+</div>
+</body>
+</html>

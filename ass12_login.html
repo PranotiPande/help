@@ -1,0 +1,74 @@
+<html>
+<head>
+<script>
+function validate()
+{
+	var name=document.getElementById("username").value;
+	var pass=document.getElementById("password").value;
+	var errname=document.getElementById("errname");
+	var errpass=document.getElementById("errpass");
+	var letters=/^[A-Za-z]+$/;
+	var password=/^[a-zA-Z#$%^&*]{8,15}$/;
+	if(name)
+	{
+		if(name.match(letters))
+		{
+		return true;
+		}
+		else{
+		errname.innerHTML="should be enter all character!";
+		}
+	}
+	else{
+		errname.innerHTML="*This field is mandatory!";
+	}
+	if(pass)
+	{
+		if(pass.match(password))
+		{
+		return true;
+		}
+		else{
+		alert("Password should be greater than 8 characters, must contain a # and atleast one digit.");
+		}
+	}
+	else{
+	errpass.innerHTML="*This field is mandatory!";
+	}
+}
+
+</script>
+<style>
+form{
+	border-style:double ;
+	width:30%;
+	height:20%;
+	text-align:center;
+	background-color:chartreuse;
+	
+}
+p{
+	color:red;
+}
+
+</style>
+</head>
+<body>
+<form>
+<h3>LOGIN FORM</h3>
+<table>
+	<tr>
+	<td>Username:</td>
+	<td><input type="text" id="username"></td>
+	<td><p id="errname"></p></td>
+	</tr>
+	<tr>
+	<td>Password:</td>
+	<td><input type="text" id="password"></td>
+	<td><p id="errpass"></p></td>
+	</tr>
+</table>
+<button name="btn" id="btn" type="button" onclick="validate()">Login</button><br>
+</form>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<html>
+<head>
+    <script>
+        function Rectangle(length,breadth)
+        {
+            this.length=length;
+            this.breadth=breadth;
+        }
+        function Circle(radius)
+        {
+            this.radius=radius;
+        }
+        function rectangle()
+        {
+            var length=document.getElementById("length").value;
+            var breadth=document.getElementById("breadth").value;
+            var rect=new Rectangle(length,breadth);
+            area=length*breadth;
+            perimeter=(2*length+2*breadth);
+            document.getElementById("myRect").innerHTML="Length="+length+"<br>Breadth="+breadth+"<br>Area="+area+"<br>Perimeter="+perimeter;
+        }
+        function circle()
+        {
+            var radius=document.getElementById("radius").value;
+            var cir=new Circle(radius);
+            area=3.14*radius*radius;
+            perimeter=2*3.14*radius;
+            document.getElementById("myCir").innerHTML="Radius="+radius+"<br>Area="+area+"<br>Perimeter="+perimeter;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        Length:<input type="number" id="length"><br><br>
+        Breadth:<input type="number" id="breadth"><br><br>
+    <input type="button" name="rect" value="RECTANGLE" onclick="rectangle()"><br><br>
+    </form>
+    <div id="myRect">
+
+    </div>
+    <form>
+        Radius:<input type="number" id="radius"><br><br>
+    <input type="button" name="cir" value="CIRCLE" onclick="circle()">
+    </form>
+    <div id="myCir">
+
+    </div>
+</body>
+</html>

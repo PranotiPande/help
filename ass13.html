@@ -1,0 +1,58 @@
+
+<html>
+    <head>
+        <script>
+            function display(){
+               var id=document.getElementById("oid").value;
+               var name=document.getElementById("cname").value;
+               var billdate=document.getElementById("bdate").value;
+               var shipdate=document.getElementById("sdate").value;
+               var ototal=document.getElementById("total").value;
+               var d=document.getElementById("mydiv");
+               if(name.length<6)
+               {
+                   document.getElementById("msg").innerHTML="Cust name cannot be &lt;6 characters";
+                }
+                else{
+                    document.getElementById("msg").innerHTML=" ";
+                }
+                if(billdate<shipdate)
+                {
+                    document.getElementById("bmsg").innerHTML="Billing date cannot be greater than shipping date";
+                }
+                else{
+                    document.getElementById("bmsg").innerHTML=" ";
+                }
+                d.innerHTML="<h3>OrderId:"+id+"<br>Cust Name:"+name+"<br>Billing date:"+billdate+"<br>Shipping date:"+shipdate+"<br>Order total:"+ototal+"</h3>";
+            }
+
+        </script>
+    </head>
+    <body>
+        <form action="display.php" method="GET">
+            <fieldset>
+                <label for="oid">Order ID:</label>
+                <input type="text" name="oid" id="oid" required>
+                <br>
+                <label for="cname">Cust Name:</label>
+                <input type="text" name="cname" id="cname" minlength="5" required>
+                <p style="color:red" id="msg"></p>
+                <br>
+                <label for="bdate">Enter Billing Date:</label>
+                <input type="date" name="bdate" id="bdate" max="sdate" required>
+                <p style="color:red" id="bmsg"></p>
+                <br>
+                <label for="sdate">Enter Shipping Date:</label>
+                <input type="date" name="sdate" id="sdate" max="sdate" required>
+                <br>
+                <label for="total">Order Total:</label>
+                <input type="number" name="total" id="total" required>
+                <br>
+                <input type="button" name="btn" value="Display" onclick="display()">
+            </fieldset>
+        </form>
+        <div id="mydiv" style="color: blue;">
+
+        </div>
+    </body>
+</html>

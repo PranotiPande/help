@@ -1,0 +1,67 @@
+<html>
+<head>
+<script>
+	var arr=[];
+	function Employee(id,name,salary)
+	{
+	this.id=id;
+	this.name=name;
+	this.salary=salary;
+	}
+	
+	function save()
+	{
+		var id=document.getElementById("id").value;
+		var name=document.getElementById("name").value;
+		var salary=document.getElementById("sal").value;
+		var emp=new Employee(id,name,salary);
+		arr.push(emp);
+		console.log(emp);
+	}
+	function show()
+	{
+	
+	document.write("<table border='2px'><tr><th>ID</th><th>NAME</th><th>SALARY</th></tr>")
+		
+		for(var i=0;i<arr.length;i++)
+		{
+		//document.write("<table border='2px'><tr><td>"+arr[i].id+"</td><td>"+arr[i].name+"</td><td>"+arr[i].salary+"</td></tr></table>");
+		document.write("<tr><td>"+arr[i].id+"</td><td>"+arr[i].name+"</td><td>"+arr[i].salary+"</td></tr>");
+		}
+		document.write("</table>")
+	}
+</script>
+</head>
+<body>
+<h1>ENTER EMPLOYEE DETAIL</h1>
+
+<table>
+	<tr>
+	<td>
+		<label>Employee_Id</label>
+	</td>
+	<td>
+		<input type="text" id="id">
+	</td>
+	</tr>
+	<tr>
+	<td>
+		<label>NAME:</label>
+	</td>
+	<td>
+		<input type="text" id="name">
+	</td>
+	</tr>
+	<tr>
+	<td>
+		<label>SALARY:</label>
+	<td>
+		<input type="text"id="sal">
+	</td>
+	</tr>
+</table>
+	
+	<input type="submit" value="save" onclick="save()">
+	<input type="button" value="show" onclick="show()">
+</body>
+<html>

@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <script>
+            var arr=[];
+             
+            arr.push("www.google.com");
+            arr.push("www.msn.com");
+            arr.push("www.amazon.co.in");
+            arr.push("in.answer,yahoo.com");
+            arr.push("en.m.wikipedia.com");
+            arr.push("codehs.gitbooks.com");
+            arr.push("www.codechef.com");
+            arr.push("www.flipkart.com");
+            function addweb(){
+                var name=document.getElementById("nm").value;
+                arr.push(name);
+                console.log(arr);
+            }
+            var newarr=[];
+            var str;
+            function show(){
+                console.log("Total websites::"+arr.length);
+                var d=document.getElementById("div1");
+                for(var i=0;i<arr.length;i++)
+                {
+                    str=arr[i];
+                    if(/^www/.test(str))
+                    newarr.push(str);
+
+                }
+                console.log("Length:"+newarr.length)
+                d.innerHTML+="<br>"+newarr ;
+
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            
+            Enter Website: <input type="text" name="nm" id="nm" placeholder="www.exmple.com"><br><br>
+            <button type="button" id="btn" onclick="addweb()">ADD Website</button>&nbsp;&nbsp;
+            <button type="button" id="btn2" onclick="show()">Total</button>
+        </form>
+        <div id="div1" style="color: yellowgreen;"> 
+        </div>
+    </body>
+</html>

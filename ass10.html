@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            
+        var names = ["pranoti","kalyani","anuj","Basu","Shree","Alok"];
+        document.getElementById("list").innerHTML = "Members of my Group are<br><ol>"+names+"</ol>";
+
+        function myFunction() {
+        document.getElementById("list").innerHTML ="Members of my Group are<br>";
+        for(var i=0;i<names.length;i++)
+        {
+            document.getElementById("list").innerHTML+="<ul><li>"+names[i]+"</li></ul>";
+        }
+        }
+
+        </script>
+    </head>
+<body>
+    
+
+<p>Click the button to show members of the group</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<ul id="list"></ul>
+
+
+
+</body>
+</html>
